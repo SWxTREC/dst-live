@@ -1,8 +1,19 @@
 # BaseApp
 
-This project is a bare-bones Angular website. Fork it to start your LASP website project.
+This project is a bare-bones Angular website.
+
+Fork this repo to start your LASP website project.
 
 BaseApp includes some sample pages and graphics, and includes the standard LASP header, footer, and search modules.
+
+Checklist of things you will need from your project or project manager:
+- larger, horizontal logo for the upper left
+- smaller, text-based logo for the mobile/sticky header
+- favicon
+- theme colors (this site is helpful for creating palettes: http://mcg.mbitson.com)
+- a start on nav items (can be a different list for header and footer)
+- social media links (if applicable)
+- partner logos (if applicable)
 
 ## After you fork
 

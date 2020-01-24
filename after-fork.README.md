@@ -51,7 +51,7 @@ need to be in to be able to see the page/site? Example:
 
 How is the project itself set up? Where would the code live in the big picture, what would it
 communicate with? Code/directory structure, front/back-end explanations, and testing procedure would
-be appropriate here. 
+be appropriate here.
 
 ## Running {{Project-Name}} Locally
 
@@ -63,7 +63,7 @@ run independently? As an example, webtcad-core can't exactly do much on its own.
 ### Special DevEnv Issues
 
 Is there anything platform specific being run? Does it need to live inside a VM to reproduce
-behaviour? Connected to a VPN/internal network?
+behavior? Connected to a VPN/internal network?
 
 ### Development server
 
@@ -118,7 +118,7 @@ When you are ready to push your image, contact the web team infrastructure group
 ### Requirements
 
 Who needs to be made aware of a release? What limitations/restrictions are there before making a
-release? For example, is there an explicity vetting process, or perhaps certain time windows when a
+release? For example, is there an explicit vetting process, or perhaps certain time windows when a
 release shouldn't be made?
 
 ### Deploy process
@@ -137,7 +137,7 @@ have a simple Hudson job, while others may be much more involved.
 ### {{Project-Name}}-specific common issues, gotchas
 
 Any kind of project-specific issues that would pop up goes here, as well as any quirks or
-inconsistiencies within the project (e.g. hacks, workarounds, "I don't know why this works but....")
+inconsistencies within the project (e.g. hacks, workarounds, "I don't know why this works but....")
 
 ## External Resources
 
