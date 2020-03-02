@@ -17,7 +17,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-            "aot": true,
+                        "aot": true,
                         "outputPath": "dist/base-app",
                         "index": "src/index.html",
                         "main": "src/main.ts",
@@ -55,10 +55,10 @@
                                     "maximumWarning": "2mb",
                                     "maximumError": "5mb"
                                 },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
-                }
+                                {
+                                "type": "anyComponentStyle",
+                                "maximumWarning": "6kb"
+                                }
                             ]
                         }
                     }
