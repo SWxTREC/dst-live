@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import {
     IImageLink,
     INavItem,
-    ISocialLinks,
+    ISocialLink,
     IVersion
 } from 'lasp-footer';
 
@@ -54,11 +54,34 @@ export class AppComponent {
         }
     ];
 
-    socialLinks: ISocialLinks = {
-        facebook: 'https://www.facebook.com/LASPatCU/',
-        twitter: 'https://twitter.com/LASPatCU',
-        youtube: 'https://www.youtube.com/user/LASPatCUBoulder'
-    };
+    socialLinks: ISocialLink[] = [
+        {
+            name: 'facebook',
+            href: 'https://www.facebook.com/LASPatCU'
+        },
+        {
+            name: 'twitter',
+            href: 'https://twitter.com/LASPatCU'
+        },
+        {
+            name: 'youtube',
+            href: 'https://www.youtube.com/user/LASPatCUBoulder'
+        },
+        {
+            name: 'github',
+            href: 'https://github.com/lasp'
+        },
+        {
+            name: 'star',
+            href: 'https://en.wikipedia.org/wiki/Star',
+            backgroundColor: 'hotpink',
+            iconSvgPath: 'M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'
+        },
+        {
+            name: 'blank',
+            href: '/default'
+        }
+    ];
 
     versions: IVersion[] = [
         {
