@@ -23,6 +23,6 @@ export const routes: Routes = [
         component: LaspFour04Component
     }, {
         path: '**',
-        component: LaspFour04Component
+        redirectTo: '404'
     }
 ];
