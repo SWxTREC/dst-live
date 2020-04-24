@@ -14,7 +14,7 @@
 // $primary:                mat-palette($slate-gray, 400);
 $primary:                   mat-palette($lasp-blue, 700);
 $accent:                    mat-palette($cu-gold, 500, 300, 700);
-$warn:                      mat-palette($lasp-red, A200, A100, 500);
+$warn:                      mat-palette($lasp-red, 300, 500, 700);
 
 $color-primary:             mat-color($primary);
 $color-primary-contrast:    mat-color($primary, default-contrast);
