@@ -2,9 +2,8 @@ import { async, TestBed } from '@angular/core/testing';
 import { RouterModule } from '@angular/router';
 
 import { LaspFooterModule } from 'lasp-footer';
+import { LaspFour04Module } from 'lasp-four04';
 import { LaspNavModule } from 'lasp-nav';
-
-import { Four04Component } from './containers/four04/four04.component';
 
 import { AppComponent } from './app.component';
 import { routes } from './routes';
@@ -15,11 +14,11 @@ describe('AppComponent', () => {
             imports: [
                 RouterModule.forRoot( routes ),
                 LaspFooterModule,
+                LaspFour04Module,
                 LaspNavModule
             ],
             declarations: [
-                AppComponent,
-                Four04Component
+                AppComponent
             ]
         }).compileComponents();
     }));
