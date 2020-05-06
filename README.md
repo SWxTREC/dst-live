@@ -14,7 +14,7 @@ Checklist of things you will need for a new app:
 - theme colors (this site is helpful for creating palettes: http://mcg.mbitson.com)
 - a start on nav items (can be a different list for header and footer)
 - social media links (if applicable)
-- partner logos (if applicable), will be square, height = ~100px
+- partner logos (if applicable) for the footer, height = ~100px
 
 For optimal performance, take a few minutes to ensure each logo is the proper size and most advantageous format, see https://www.interactivesearchmarketing.com/jpeg-png-proper-image-formatting/ for a quick summary of when to use .jpg vs .png.
 
