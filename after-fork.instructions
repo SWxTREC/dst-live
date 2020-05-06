@@ -3,5 +3,6 @@ To finish setting up your project, do the following as needed:
 * Change `src/favicon.ico`
 * Change the site's theme colors in `src/theme/theme-colors.scss`
 * Replace logos in `src/assets/images/`
+* Update paths to logos (`*LogoSrc`) in `src/app.component.ts`
 * Change header and footer configuration in `src/app.component.ts` and `src/app.component.html`
 * Pare down the list of imports in `src/app/modules/material.module.ts` to only include what you need
