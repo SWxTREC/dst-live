@@ -6,15 +6,18 @@ Fork this repo to start your LASP website project.
 
 BaseApp includes some sample pages and graphics, and includes the standard LASP header, footer, and search modules.
 
-Checklist of things you will need from your project or project manager:
-- larger, horizontal logo for the upper left, ~208px tall
-- smaller, text-based logo for the mobile/sticky header, ~88px tall
-- if not using the standard LASP logo in the upper left and if applicable, parent organization logo, ~208px depending on style of logo
+Checklist of things you will need for a new app:
+- main logo, a horizontal logo for the upper left, height = ~208px
+- smaller, text-based logo for the mobile/sticky header, height = ~88px
+- if not using the standard LASP logo in the upper right, get the logo for the parent organization, height = ~208px
 - favicon
 - theme colors (this site is helpful for creating palettes: http://mcg.mbitson.com)
 - a start on nav items (can be a different list for header and footer)
 - social media links (if applicable)
-- partner logos (if applicable)
+    - facebook, twitter, youtube, and github have icons; if you need a new icon, get its background color (e.g., 'hotpink' or '#f34592' and svg path (e.g., 'M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z')
+- partner logos (if applicable) for the footer, height = ~100px
+
+For optimal performance, take a few minutes to ensure each logo is the proper size and most advantageous format, see https://www.interactivesearchmarketing.com/jpeg-png-proper-image-formatting/ for a quick summary of when to use .jpg vs .png.
 
 ## After you fork
 

@@ -20,6 +20,9 @@ import { environment } from '../environments/environment';
     styleUrls: [ './app.component.scss' ]
 })
 export class AppComponent {
+    largeLogoSrc = 'assets/images/base-app-logo.jpg';
+    smallLogoSrc = 'assets/images/base-app-logo-small.png';
+    orgLogoSrc = 'https://lasp.colorado.edu/media/projects/base-app/images/header-lasp-logo.png';
 
     // please have no more than 7 items in the nav menu
     navItems: INavItem[] = [
