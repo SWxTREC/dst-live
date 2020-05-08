@@ -1,6 +1,6 @@
 # BaseApp
 
-This project is a bare-bones Angular website.
+This project is a bare-bones Angular website. A demo is available at http://base-app-demo.lasp.colorado.edu/ . 
 
 Fork this repo to start your LASP website project.
 
