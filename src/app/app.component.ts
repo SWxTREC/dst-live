@@ -1,4 +1,11 @@
 import { Component } from '@angular/core';
+import {
+    COMMON_COOKIE_OPTIONS,
+    COOKIE_TYPES,
+    ICookieBannerOption,
+    LaspCookieConsentService
+} from 'lasp-cookie-consent';
+import { filter, first } from 'rxjs/operators';
 
 import {
     IImageLink,
@@ -101,7 +108,19 @@ export class AppComponent {
         }
     ];
 
-    constructor( private _snippets: LaspBaseAppSnippetsService ) {
-        this._snippets.appComponent.all({ googleAnalyticsId: environment.googleAnalyticsId });
+    cookieOptions: ICookieBannerOption[] = [ COMMON_COOKIE_OPTIONS.statistics ];
+
+    constructor(
+        private _snippets: LaspBaseAppSnippetsService,
+        private _consent: LaspCookieConsentService
+    ) {
+        this._snippets.appComponent.allExcept([ this._snippets.appComponent.setupGoogleAnalytics ]);
+
+        // don't run google analytics until the user accepts the relevant cookie
+        this._consent.consentChangeSubject.pipe( filter(change => {
+            return change && change.key === COOKIE_TYPES.statistics && change.newValue === true;
+        })).pipe( first() ).subscribe( change => {
+            this._snippets.appComponent.setupGoogleAnalytics( environment.googleAnalyticsId );
+        });
     }
 }

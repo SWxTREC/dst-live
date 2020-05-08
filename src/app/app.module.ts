@@ -7,6 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 
+import { LaspCookieConsentModule } from 'lasp-cookie-consent';
 import { LaspFooterModule } from 'lasp-footer';
 import { LaspFour04Module } from 'lasp-four04';
 import { LaspNavModule } from 'lasp-nav';
@@ -23,6 +24,7 @@ import { routes } from './routes';
         BrowserModule,
         BrowserAnimationsModule,
         FormsModule,
+        LaspCookieConsentModule,
         FlexLayoutModule,
         LaspFooterModule,
         LaspFour04Module,
