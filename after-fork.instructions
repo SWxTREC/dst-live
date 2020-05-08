@@ -5,4 +5,5 @@ To finish setting up your project, do the following as needed:
 * Replace logos in `src/assets/images/`
 * Update paths to logos (`*LogoSrc`) in `src/app.component.ts`
 * Change header and footer configuration in `src/app.component.ts` and `src/app.component.html`
+* Configure the cookie banner in `src/app.component.ts` and `src/app.component.html` according to what kind of cookies or data your site will save to the user's machine
 * Pare down the list of imports in `src/app/modules/material.module.ts` to only include what you need
