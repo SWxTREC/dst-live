@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
 import {
     COMMON_COOKIE_OPTIONS,
-    COOKIE_TYPES,
-    ICookieBannerOption,
-    LaspCookieConsentService
+    ICookieBannerOption
 } from 'lasp-cookie-consent';
-import { filter, first } from 'rxjs/operators';
 
 import {
     IImageLink,
