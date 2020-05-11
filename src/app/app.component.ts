@@ -108,19 +108,9 @@ export class AppComponent {
         }
     ];
 
-    cookieOptions: ICookieBannerOption[] = [ COMMON_COOKIE_OPTIONS.statistics ];
+    cookieOptions: ICookieBannerOption[] = [ COMMON_COOKIE_OPTIONS.necessary ];
 
-    constructor(
-        private _snippets: LaspBaseAppSnippetsService,
-        private _consent: LaspCookieConsentService
-    ) {
-        this._snippets.appComponent.allExcept([ this._snippets.appComponent.setupGoogleAnalytics ]);
-
-        // don't run google analytics until the user accepts the relevant cookie
-        this._consent.consentChangeSubject.pipe( filter(change => {
-            return change && change.key === COOKIE_TYPES.statistics && change.newValue === true;
-        })).pipe( first() ).subscribe( change => {
-            this._snippets.appComponent.setupGoogleAnalytics( environment.googleAnalyticsId );
-        });
+    constructor( private _snippets: LaspBaseAppSnippetsService ) {
+        this._snippets.appComponent.all({ googleAnalyticsId: environment.googleAnalyticsId });
     }
 }
