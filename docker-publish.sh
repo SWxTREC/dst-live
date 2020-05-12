@@ -1,6 +1,6 @@
 #!/bin/bash -eu
 
-REGISTRY=web-registry.lasp.colorado.edu # Default registry
+REGISTRY=docker-registry.pdmz.lasp.colorado.edu/web # Default registry
 NAME=base-app
 # have to check to make sure REFSPEC is bound / not empty for script to run
 if [[ ! -z ${REFSPEC+x} ]] && [ "${REFSPEC}" = "dev" ] ; then
