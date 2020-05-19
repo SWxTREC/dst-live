@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import {
+    COMMON_COOKIE_OPTIONS,
+    ICookieBannerOption
+} from 'lasp-cookie-consent';
 
 import {
     IImageLink,
@@ -100,6 +104,8 @@ export class AppComponent {
             linkedPart: 'version'
         }
     ];
+
+    cookieOptions: ICookieBannerOption[] = [ COMMON_COOKIE_OPTIONS.necessary ];
 
     constructor( private _snippets: LaspBaseAppSnippetsService ) {
         this._snippets.appComponent.all({ googleAnalyticsId: environment.googleAnalyticsId });

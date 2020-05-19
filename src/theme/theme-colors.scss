@@ -21,8 +21,8 @@ $color-primary-contrast:    mat-color($primary, default-contrast);
 $color-accent:              mat-color($accent);
 $color-warn:                mat-color($warn);
 
-$primary-dark:              mat-palette($lisird-orange, 500, 300, 700);
-$accent-dark:               mat-palette($mat-blue-gray, 600);
+$primary-dark:              mat-palette($lasp-blue, 300, 100, 500);
+$accent-dark:               mat-palette($cu-gold, 300);
 $warn-dark:                 mat-palette($mat-red, A200);
 
 $color-primary-dark:        mat-color($primary-dark);
