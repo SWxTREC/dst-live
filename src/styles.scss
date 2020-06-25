@@ -1,9 +1,9 @@
+@use '~lasp-base-app-snippets/styles/global';
 /* You can add global styles to this file, and also import other style files */
 @import 'theme/theme-colors.scss';
 @import 'theme/theme-lasp.scss';
 
-@import '~lasp-base-app-snippets/styles/global.scss';
-@include all((
+@include global.all((
     'primary-color': $color-primary,
     'primary-contrast-color': $color-primary-contrast,
     'accent-color': $color-accent,

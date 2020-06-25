@@ -1,2 +1,2 @@
-@import '~lasp-base-app-snippets/styles/misc.scss';
-@include ignore-max-page-width;
+@use '~lasp-base-app-snippets/styles/misc';
+@include misc.ignore-max-page-width;
