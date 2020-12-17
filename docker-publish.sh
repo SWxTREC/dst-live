@@ -10,3 +10,4 @@ VERSION="${VERSION:-$(npm version | head -n 1 | awk '{print $3;}' | tr -d "',")}
 fi
 
 docker push ${REGISTRY}/${NAME}:${VERSION}
+docker rmi ${REGISTRY}/${NAME}:${VERSION}
