@@ -31,7 +31,7 @@ import { routes } from './routes';
         LaspNavModule,
         HttpClientModule,
         MaterialModule,
-        RouterModule.forRoot( routes, { scrollPositionRestoration: 'enabled' } )
+        RouterModule.forRoot( routes, { scrollPositionRestoration: 'enabled', relativeLinkResolution: 'corrected' } )
     ],
     providers: [
         {
