@@ -6,7 +6,6 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-
 import { LaspCookieConsentModule } from 'lasp-cookie-consent';
 import { LaspFooterModule } from 'lasp-footer';
 import { LaspFour04Module } from 'lasp-four04';

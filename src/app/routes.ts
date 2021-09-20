@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-
 import { LaspFour04Component } from 'lasp-four04';
 
 export const routes: Routes = [
