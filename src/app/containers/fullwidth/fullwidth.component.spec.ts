@@ -16,7 +16,7 @@ describe('AboutComponent', () => {
             declarations: [ FullwidthComponent ],
             imports: [ MaterialModule ]
         })
-    .compileComponents();
+        .compileComponents();
     }));
 
     beforeEach(() => {
