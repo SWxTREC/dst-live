@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { debounceTime } from 'rxjs/operators';
 
 import { DatasetService, IDataset } from './datasets.service';
 import { IMission, MissionService } from './mission.service';
@@ -26,7 +25,7 @@ export class SearchService {
         private _datasetService: DatasetService,
         private _missionService: MissionService
     ) {
-        this.$results = <BehaviorSubject<ISearchResults>>new BehaviorSubject( DEFAULT_RESULTS );
+        this.$results = new BehaviorSubject( DEFAULT_RESULTS ) as BehaviorSubject<ISearchResults>;
     }
 
     /** return the observable stream that represents the search results */

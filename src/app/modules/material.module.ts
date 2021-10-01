@@ -3,8 +3,9 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CdkTableModule } from '@angular/cdk/table';
 import { CdkTreeModule } from '@angular/cdk/tree';
 import { NgModule } from '@angular/core';
-
-// TODO remove unused Angular Material modules
+import {
+    MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule
+} from '@angular/material-moment-adapter';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -33,9 +34,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
-import {
-    MAT_MOMENT_DATE_ADAPTER_OPTIONS, MatMomentDateModule
-} from '@angular/material-moment-adapter';
+// TODO remove unused Angular Material modules
 
 @NgModule({
     exports: [
