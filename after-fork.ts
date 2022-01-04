@@ -61,7 +61,7 @@ async function replace( options: any ): Promise<void> {
 
     // replace kebab-case instances
     await replace({
-        files: [ 'angular.json', 'e2e/**/*', 'src/**/*' ],
+        files: [ 'angular.json', 'e2e/**/*', 'src/**/*', '.eslintrc.json' ],
         from: /base-app/g,
         to: prefixName
     });
@@ -82,7 +82,7 @@ async function replace( options: any ): Promise<void> {
 
     // replace camelCase instances
     await replace({
-        files: [ 'src/**/*' ],
+        files: [ 'src/**/*', '.eslintrc.json' ],
         from: /baseApp/g,
         to: projectNameCamel
     });

@@ -18,10 +18,7 @@ export const routes: Routes = [
         path: 'datasets/:id',
         loadChildren: () => import( './containers/datasets/datasets.module' ).then( m => m.DatasetsModule )
     }, {
-        path: '404',
-        component: LaspFour04Component
-    }, {
         path: '**',
-        redirectTo: '404'
+        component: LaspFour04Component
     }
 ];
