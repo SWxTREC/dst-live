@@ -1,52 +1,69 @@
-# BaseApp
+# CU Space Weather Forecast
 
-This project is a bare-bones Angular website. A demo is available at http://base-app-demo.lasp.colorado.edu/ . The live demo site uses the base-app-libraries project which contains reusable libraries to help build your app. Base-app-librares can be found here https://bitbucket.lasp.colorado.edu/projects/WEBAPPS/repos/base-app-libraries/browse
-
-Fork this repo to start your LASP website project.
-
-BaseApp includes some sample pages and graphics, and includes the standard LASP header, footer, and search modules.
-
-Checklist of things you will need for a new app:
-- main logo, a horizontal logo for the upper left, height = ~208px
-- smaller, text-based logo for the mobile/sticky header, height = ~88px
-- if not using the standard LASP logo in the upper right, get the logo for the parent organization, height = ~208px
-- favicon
-- theme colors (this site is helpful for creating palettes: http://mcg.mbitson.com)
-- a start on nav items (can be a different list for header and footer)
-- social media links (if applicable)
-    - facebook, twitter, youtube, and github have icons; if you need a new icon, get its background color (e.g., 'hotpink' or '#f34592' and svg path (e.g., 'M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z')
-- partner logos (if applicable) for the footer, height = ~100px
-
-For optimal performance, take a few minutes to ensure each logo is the proper size and most advantageous format, see https://www.interactivesearchmarketing.com/jpeg-png-proper-image-formatting/ for a quick summary of when to use .jpg vs .png.
-
-## After you fork
-
-**Do not make any changes to your forked repo until you follow these steps.**
-
-* Run `npm install`
-* Run `npm run after-fork` and follow the prompts.
+Here is where you would give a quick "elevator pitch" about your project. Who is it for, why is was it needed, what does it do, things like that.
 
 ## Contacts
 
-BaseApp is collectively owned by the front-end developers in the LASP web team.
-
+* **Product Owner {{Organization}}:**
+	{{Product Owner Name. Duplicate as necessary}} (<{{email@address.com}}>)
 * **Experienced Devs:**
-    * Hunter Leise (<Hunter.Leise@lasp.colorado.edu>)
-    * Jenny Knuth (<Jennifer.Knuth@lasp.colorado.edu>)
-    * Ransom Christofferson (<Ransom.Christofferson@lasp.colorado.edu>)
-    * Ty Traver (<Tyler.Traver@lasp.colorado.edu>)
+    * {List Of Devs}
 
 
 ## Relevant JIRA Project(s)
 
-* [WEBAPP](http://mods-jira.lasp.colorado.edu:8080/projects/WEBAPP/)
+Either a single JIRA project, or a list of JIRA projects that are relevant to this codebase. For
+example, these are relevant to Lisird3:
 
+* [LISIRDIII](http://mods-jira.lasp.colorado.edu:8080/browse/LISIRDIII/): Main project for the
+	Lisird3 codebase
+* [LATIS](http://mods-jira.lasp.colorado.edu:8080/browse/LATIS/): Project for the latis project,
+	which provides the backend to Lisird3
+* [METAREPO](http://mods-jira.lasp.colorado.edu:8080/browse/METAREPO/): Project for the LEMR
+	metadata repository, which also provides data to Lisird3
 
-## Development
+## Related Projects
 
-Whenever you make changes to BaseApp, keep in mind what a developer may need to do after forking this repo, and make changes to `after-fork.ts` or `after-fork.instructions` if necessary.
+If this is part of the webtcad/latis family, a link to the core project is required. Here, you
+should put links to other JIRA projects that this project uses. For example, if this were
+Webtcad-maven, links to webtcad-core and latis would be here.
 
-`after-fork.ts` is a script that automates many tasks, such as replacing 'base-app' with the name of the new project. `after-fork.instructions` is a set of instructions shown to the user which cannot easily be automated.
+* [{{JIRA Project Name}}]({{Link To Project}})
+
+## Production URLs
+
+Where can you find this project in production? For example:
+
+* Production site: https://lasp.colorado.edu/mms/sdc/team/
+	* NOTE: see "Necessary Permissions" for WebIAM group
+* Testing site: http://sdc-webdev1.lasp.colorado.edu/mms/sdc/team/
+
+## Necessary Permissions
+
+What permissions, if any, are necessary to work on this project, deploy it, or view it in
+production? For example, if this page will be protected by WebIAM, what WebIAM group does a user
+need to be in to be able to see the page/site? Example:
+
+* Hudson permissions: ask Steve
+* WebIAM group for production: mms-sdc-science-team
+
+## Architecture
+
+How is the project itself set up? Where would the code live in the big picture, what would it
+communicate with? Code/directory structure, front/back-end explanations, and testing procedure would
+be appropriate here.
+
+## Running CU Space Weather Forecast Locally
+
+### Project Dependencies
+
+For example, does the project depend on having a local apache server? Fuseki? Can this project be
+run independently? As an example, webtcad-core can't exactly do much on its own.
+
+### Special DevEnv Issues
+
+Is there anything platform specific being run? Does it need to live inside a VM to reproduce
+behavior? Connected to a VPN/internal network?
 
 ### Development server
 
@@ -55,6 +72,8 @@ Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app 
 ### Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 ### Build
 
@@ -86,7 +105,7 @@ Once you have followed the steps in after-fork.instructions you can run `./docke
 
 Once you have built your image using the command above, you can `./docker-run.sh` to start a local development image. This image will be served at `http://localhost:8080/dev`
 
-To stop your image run `docker stop {{project-name}}`
+To stop your image run `docker stop {{Project-name}}`
 
 Cleaning up old images is also a good idea from time to time. To clean up your unused docker resources run `docker system prune`
 
@@ -94,6 +113,33 @@ Cleaning up old images is also a good idea from time to time. To clean up your u
 
 When you are ready to push your image, contact the web team infrastructure group for credentials and instructions on how to log in. Once this is complete you can run `./docker-publish.sh` to publish your image to the server.
 
-## Further help
+## Deploying CU Space Weather Forecast
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Requirements
+
+Who needs to be made aware of a release? What limitations/restrictions are there before making a
+release? For example, is there an explicit vetting process, or perhaps certain time windows when a
+release shouldn't be made?
+
+### Deploy process
+
+Run `npm version <major | minor | patch>` on the master branch. This will:
+
+* run the linter and unit tests, and abort if they fail
+* increment the version, commit the change, and create a git tag
+* push the changes and the new tag to the remote repo
+
+What other steps are needed to deploy the app/server/project? What is the process for making a release? Many projects will
+have a simple Hudson job, while others may be much more involved.
+
+## FAQs and Help
+
+### CU Space Weather Forecast-specific common issues, gotchas
+
+Any kind of project-specific issues that would pop up goes here, as well as any quirks or
+inconsistencies within the project (e.g. hacks, workarounds, "I don't know why this works but....")
+
+## External Resources
+
+Useful documentation that isn't ours (for example, in LaTiS, maybe links to Scala documentation, or
+higher level topics like RDB and Data Model articles/resources)

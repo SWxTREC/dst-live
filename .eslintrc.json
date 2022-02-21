@@ -16,7 +16,7 @@
                     "error",
                     {
                         "type": "element",
-                        "prefix": [ "base-app", "lasp" ],
+                        "prefix": [ "swqu", "lasp" ],
                         "style": "kebab-case"
                     }
                 ],
@@ -24,7 +24,7 @@
                     "error",
                     {
                         "type": "attribute",
-                        "prefix": [ "baseApp", "lasp" ],
+                        "prefix": [ "swqu", "lasp" ],
                         "style": "camelCase"
                     }
                 ]
