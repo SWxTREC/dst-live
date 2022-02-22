@@ -1,6 +1,6 @@
 # CU Space Weather Forecast
 
-This app demos Dst predictions from CU's Ensemble Learning for Accurate and Reliable Uncertainty Quantification project that is part of the NSF/NASA Space Weather with Quantified Uncertainty (SWQU) program. https://ml-space-weather.github.io/index.html
+This app shows Dst predictions from CU's Ensemble Learning for Accurate and Reliable Uncertainty Quantification project that is part of the NSF/NASA Space Weather with Quantified Uncertainty (SWQU) program. https://ml-space-weather.github.io/index.html
 
 ## Contacts
 
