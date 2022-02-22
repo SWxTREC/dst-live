@@ -17,6 +17,11 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
+                        "allowedCommonJsDependencies": [
+                            "highcharts",
+                            "lodash",
+                            "moment-timezone"
+                        ],
                         "aot": true,
                         "outputPath": "dist/swqu",
                         "index": "src/index.html",
