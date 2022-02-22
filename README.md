@@ -1,44 +1,28 @@
 # CU Space Weather Forecast
 
-Here is where you would give a quick "elevator pitch" about your project. Who is it for, why is was it needed, what does it do, things like that.
+This app demos Dst predictions from CU's Ensemble Learning for Accurate and Reliable Uncertainty Quantification project that is part of the NSF/NASA Space Weather with Quantified Uncertainty (SWQU) program. https://ml-space-weather.github.io/index.html
 
 ## Contacts
 
-* **Product Owner {{Organization}}:**
-	{{Product Owner Name. Duplicate as necessary}} (<{{email@address.com}}>)
+* **Product Owner {{SWx TREC}}:**
+	{{Enrico Camporeale}} (<{{enrico.camporeale@noaa.gov}}>)
 * **Experienced Devs:**
-    * {List Of Devs}
+    * {Jenny Knuth}
 
 
 ## Relevant JIRA Project(s)
 
-Either a single JIRA project, or a list of JIRA projects that are relevant to this codebase. For
-example, these are relevant to Lisird3:
-
-* [LISIRDIII](http://mods-jira.lasp.colorado.edu:8080/browse/LISIRDIII/): Main project for the
-	Lisird3 codebase
-* [LATIS](http://mods-jira.lasp.colorado.edu:8080/browse/LATIS/): Project for the latis project,
-	which provides the backend to Lisird3
-* [METAREPO](http://mods-jira.lasp.colorado.edu:8080/browse/METAREPO/): Project for the LEMR
-	metadata repository, which also provides data to Lisird3
-
-## Related Projects
-
-If this is part of the webtcad/latis family, a link to the core project is required. Here, you
-should put links to other JIRA projects that this project uses. For example, if this were
-Webtcad-maven, links to webtcad-core and latis would be here.
-
-* [{{JIRA Project Name}}]({{Link To Project}})
+* [SWT](http://mods-jira.lasp.colorado.edu:8080/browse/SWT/): Main project for the
+	SWx TREC Model Staging Platform
 
 ## Production URLs
 
 Where can you find this project in production? For example:
 
-* Production site: https://lasp.colorado.edu/mms/sdc/team/
-	* NOTE: see "Necessary Permissions" for WebIAM group
-* Testing site: http://sdc-webdev1.lasp.colorado.edu/mms/sdc/team/
+* Production site: https://dst.swx-trec.com
 
-## Necessary Permissions
+
+<!-- ## Necessary Permissions
 
 What permissions, if any, are necessary to work on this project, deploy it, or view it in
 production? For example, if this page will be protected by WebIAM, what WebIAM group does a user
@@ -51,19 +35,11 @@ need to be in to be able to see the page/site? Example:
 
 How is the project itself set up? Where would the code live in the big picture, what would it
 communicate with? Code/directory structure, front/back-end explanations, and testing procedure would
-be appropriate here.
+be appropriate here. -->
 
 ## Running CU Space Weather Forecast Locally
 
-### Project Dependencies
-
-For example, does the project depend on having a local apache server? Fuseki? Can this project be
-run independently? As an example, webtcad-core can't exactly do much on its own.
-
-### Special DevEnv Issues
-
-Is there anything platform specific being run? Does it need to live inside a VM to reproduce
-behavior? Connected to a VPN/internal network?
+clone the repo then `npm install`
 
 ### Development server
 
