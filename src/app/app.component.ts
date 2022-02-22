@@ -39,20 +39,12 @@ export class AppComponent {
 
     orgLogos: IImageLink[] = [
         {
-            src: 'https://lasp.colorado.edu/media/projects/base-app/images/footer-lasp-logo.png',
-            href: 'http://lasp.colorado.edu'
-        },
-        {
             src: 'assets/images/nasa-logo-web-rgb.png',
             href: 'https://ml-space-weather.github.io/'
         }
     ];
 
     socialLinks: ISocialLink[] = [
-        {
-            name: 'github',
-            href: 'https://github.com/ML-Space-Weather'
-        }
     ];
 
     versions: IVersion[] = [
@@ -60,7 +52,6 @@ export class AppComponent {
             version: environment.version
         }
     ];
-
 
     constructor( private _snippets: LaspBaseAppSnippetsService ) {
         this._snippets.appComponent.allExcept([ this._snippets.appComponent.setupGoogleAnalytics ]);
