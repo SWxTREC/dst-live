@@ -12,8 +12,8 @@
 // the initial variable declarations with the palettes need to be repeated from the theme file
 
 // $primary:                mat-palette($slate-gray, 400);
-$primary:                   mat-palette($lasp-blue, 700);
-$accent:                    mat-palette($cu-gold, 500, 300, 700);
+$primary:                   mat-palette($dusk-blue, 700);
+$accent:                    mat-palette($solar-gold, 500, 300, 700);
 $warn:                      mat-palette($lasp-red, 300, 500, 700);
 
 $color-primary:             mat-color($primary);
@@ -21,9 +21,9 @@ $color-primary-contrast:    mat-color($primary, default-contrast);
 $color-accent:              mat-color($accent);
 $color-warn:                mat-color($warn);
 
-$primary-dark:              mat-palette($lasp-blue, 300, 100, 500);
-$accent-dark:               mat-palette($cu-gold, 300);
-$warn-dark:                 mat-palette($mat-red, A200);
+$primary-dark:              mat-palette($dusk-blue, 300, 100, 500);
+$accent-dark:               mat-palette($solar-gold, 300);
+$warn-dark:                 mat-palette($lasp-red, A200);
 
 $color-primary-dark:        mat-color($primary-dark);
 $color-accent-dark:         mat-color($accent-dark);

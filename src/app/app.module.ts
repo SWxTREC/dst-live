@@ -12,6 +12,9 @@ import { LaspFour04Module } from 'lasp-four04';
 import { LaspNavModule } from 'lasp-nav';
 
 import { AppComponent } from './app.component';
+import { AboutModule } from './containers/about/about.module';
+import { DocsModule } from './containers/docs/docs.module';
+import { DstModule } from './containers/dst/dst.module';
 import { MaterialModule } from './modules';
 import { routes } from './routes';
 
@@ -30,6 +33,9 @@ import { routes } from './routes';
         LaspNavModule,
         HttpClientModule,
         MaterialModule,
+        DstModule,
+        AboutModule,
+        DocsModule,
         RouterModule.forRoot( routes, { scrollPositionRestoration: 'enabled', relativeLinkResolution: 'corrected' } )
     ],
     providers: [
