@@ -89,8 +89,8 @@ export class DstComponent implements OnInit {
                 {
                     url: `${environment.mockData}`,
                     name: 'Predicted Dst',
-                    rangeVariables: ['predicted_dst'],
-                    selectedRangeVariables: ['predicted_dst'],
+                    rangeVariables: ['predicted_dst1', 'predicted_dst2', 'predicted_dst3'],
+                    selectedRangeVariables: ['predicted_dst1', 'predicted_dst2', 'predicted_dst3'],
                     domainVariables: ['time']
                 }
             ],

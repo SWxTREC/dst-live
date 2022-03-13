@@ -22,13 +22,23 @@ export class DocsComponent implements OnInit {
                         "units": "milliseconds since 1970-01-01",
                         "length": "23"
                     },
-                    "predicted_dst": {
+                    "predicted_dst1": {
+                        "missing_value": "99999.99",
+                        "description": "Equatorial Dst Index",
+                        "units": "nT"
+                    },
+                    "predicted_dst2": {
+                        "missing_value": "99999.99",
+                        "description": "Equatorial Dst Index",
+                        "units": "nT"
+                    },
+                    "predicted_dst3": {
                         "missing_value": "99999.99",
                         "description": "Equatorial Dst Index",
                         "units": "nT"
                     }
                 },
-                "parameters": [ "time", "predicted_dst" ],
+                "parameters": [ "time", "predicted_dst1", "predicted_dst2", "predicted_dst3" ],
                 "data": []
             }
         };

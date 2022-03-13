@@ -14,7 +14,7 @@ export class LatisService {
     ) {
         this.getDstData().subscribe( (response: { [parameter: string]: { data: number[][] } }) => {
             const dataKey = Object.keys(response)[0];
-            const alteredData = response[dataKey].data.map( (dataItem: number[], index: number) => [ dataItem[0] + ( 1000 * 60 * 60 * 24 * 5 ), Number((dataItem[1] + ( 5 * index * 0.1) * ( 0.5 - Math.random()) ).toFixed(0)) ]);
+            const alteredData = response[dataKey].data.map( (dataItem: number[], index: number) => [ dataItem[0] + ( 1000 * 60 * 60 * 24 * 5 ), Number((dataItem[1] + ( 5 * index * 0.1) * ( 0.5 - Math.random()) ).toFixed(0)), Number((dataItem[1] + ( 5 * index * 0.2) * ( 0.5 - Math.random()) ).toFixed(0)), Number((dataItem[1] + ( 5 * index * 0.3) * ( 0.5 - Math.random()) ).toFixed(0)) ]);
             this.mockData$.next(alteredData);
         });
     }
