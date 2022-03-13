@@ -72,27 +72,34 @@ export class DstComponent implements OnInit {
         this.getDstValues();
     }
 
-    // get the last 14 days of Dst
+    // get the last 7 days of Dst
     getDstValues() {
         const endDate: number = Date.now();
-        const startDate: number = endDate - (1000 * 60 * 60 * 24 * 14);
+        const startDate: number = endDate - (1000 * 60 * 60 * 24 * 7);
         const dstPlot: IPlot = {
             collapsed: false,
-            datasets: [{
-                url: `${environment.latisSwp}kyoto_dst_index.jsond?`,
-                name: 'Kyoto Dst',
-                rangeVariables: ['dst'],
-                selectedRangeVariables: ['dst'],
-                domainVariables: ['time']
-            }],
+            datasets: [
+                {
+                    url: `${environment.latisSwp}kyoto_dst_index.jsond?`,
+                    name: 'Kyoto Dst',
+                    rangeVariables: ['dst'],
+                    selectedRangeVariables: ['dst'],
+                    domainVariables: ['time']
+                },
+                {
+                    url: `${environment.mockData}`,
+                    name: 'Predicted Dst',
+                    rangeVariables: ['predicted_dst'],
+                    selectedRangeVariables: ['predicted_dst'],
+                    domainVariables: ['time']
+                }
+            ],
             initialOptions: DEFAULT_PLOT_OPTIONS as IMenuOptions,
             range: {
                 start: startDate,
-                end: endDate
+                end: endDate + ( 1000 * 60 * 60 * 24 * 7)
             }
         };
         this._plotsService.addPlot(dstPlot)
     }
-
-
 }
