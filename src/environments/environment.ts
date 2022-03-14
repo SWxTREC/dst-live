@@ -6,8 +6,8 @@ import { version } from '../../package.json';
 
 export const environment = {
     production: false,
-    latisSwp: 'https://swp-dev.pdmz.lasp.colorado.edu/space-weather-portal/latis/dap/',
-    // latisSwp: 'https://lasp.colorado.edu/space-weather-portal/latis/dap/',
+    // latisSwp: 'https://swp-dev.pdmz.lasp.colorado.edu/space-weather-portal/latis/dap/',
+    latisSwp: 'https://lasp.colorado.edu/space-weather-portal/latis/dap/',
     mockData: 'assets/data/mockData.json',
     version: version
 };

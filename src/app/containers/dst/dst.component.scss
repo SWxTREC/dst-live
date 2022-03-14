@@ -3,4 +3,9 @@
 
 .plots {
     display: flex;
+    &__selector {
+        ::ng-deep {
+            .mat-checkbox { display: none }
+        }
+    }
 }

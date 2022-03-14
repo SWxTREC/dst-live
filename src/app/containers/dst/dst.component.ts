@@ -24,7 +24,7 @@ const DEFAULT_PLOT_OPTIONS = {
             high: null
         },
         scaling: undefined,
-        useMultipleAxes: true
+        useMultipleAxes: false
     }
 };
 
