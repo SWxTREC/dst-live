@@ -12,6 +12,7 @@ import {
     SeriesDisplayMode,
     UiOptionsService
 } from 'scicharts';
+import { LatisService } from 'src/app/services';
 import { environment } from 'src/environments/environment';
 
 const DEFAULT_PLOT_OPTIONS = {
@@ -59,7 +60,6 @@ const DST_PRESET: IUiFeatures = {
     modifyDatasetsButton: false
 };
 
-
 @Component({
     selector: 'lasp-dst',
     templateUrl: './dst.component.html',
@@ -69,6 +69,7 @@ export class DstComponent implements OnInit {
     endDate: number;
 
     constructor(
+        private _latisService: LatisService,
         private _plotsService: PlotsService,
         private _uiOptionsService: UiOptionsService
     ) {
@@ -106,14 +107,10 @@ export class DstComponent implements OnInit {
             }
         };
         this._plotsService.addPlot(dstPlot);
-
     }
 
-    // get the last 7 days of Dst
     getDstValues() {
-        const endDate: number = Date.now();
-        const startDate: number = endDate - (1000 * 60 * 60 * 24 * 7);
-        const separateDatasets: IPlot = {
+        const dstPlot: IPlot = {
             collapsed: false,
             datasets: [
                 {
@@ -124,34 +121,55 @@ export class DstComponent implements OnInit {
                     domainVariables: [ 'time' ]
                 },
                 {
-                    url: `${environment.mockData_first}`,
-                    name: 'Predicted Dst at Runtime A',
-                    rangeVariables: [ 'predicted_dst' ],
-                    selectedRangeVariables: [ 'predicted_dst' ],
+                    url: `${environment.mockData1hr}`,
+                    name: '1 hr prediction',
+                    rangeVariables: [ 'predicted_dst_1hr' ],
+                    selectedRangeVariables: [ 'predicted_dst_1hr' ],
                     domainVariables: [ 'time' ]
                 },
                 {
-                    url: `${environment.mockData_mid}`,
-                    name: 'Predicted Dst at Runtime B',
-                    rangeVariables: [ 'predicted_dst' ],
-                    selectedRangeVariables: [ 'predicted_dst' ],
+                    url: `${environment.mockData2hr}`,
+                    name: '2 hr prediction',
+                    rangeVariables: [ 'predicted_dst_2hr' ],
+                    selectedRangeVariables: [ 'predicted_dst_2hr' ],
                     domainVariables: [ 'time' ]
                 },
                 {
-                    url: `${environment.mockData_last}`,
-                    name: 'Predicted Dst at Runtime C',
-                    rangeVariables: [ 'predicted_dst' ],
-                    selectedRangeVariables: [ 'predicted_dst' ],
+                    url: `${environment.mockData3hr}`,
+                    name: '3 hr prediction',
+                    rangeVariables: [ 'predicted_dst_3hr' ],
+                    selectedRangeVariables: [ 'predicted_dst_3hr' ],
+                    domainVariables: [ 'time' ]
+                },
+                {
+                    url: `${environment.mockData4hr}`,
+                    name: '4 hr prediction',
+                    rangeVariables: [ 'predicted_dst_4hr' ],
+                    selectedRangeVariables: [ 'predicted_dst_4hr' ],
+                    domainVariables: [ 'time' ]
+                },
+                {
+                    url: `${environment.mockData5hr}`,
+                    name: '5 hr prediction',
+                    rangeVariables: [ 'predicted_dst_5hr' ],
+                    selectedRangeVariables: [ 'predicted_dst_5hr' ],
+                    domainVariables: [ 'time' ]
+                },
+                {
+                    url: `${environment.mockData6hr}`,
+                    name: '6 hr prediction',
+                    rangeVariables: [ 'predicted_dst_6hr' ],
+                    selectedRangeVariables: [ 'predicted_dst_6hr' ],
                     domainVariables: [ 'time' ]
                 }
             ],
             initialOptions: DEFAULT_PLOT_OPTIONS as IMenuOptions,
             range: {
-                start: startDate,
-                end: endDate + ( 1000 * 60 * 60 * 7 )
+                start: this._latisService.startDate,
+                end: this._latisService.endDate
             }
         };
-        const combinedDataset: IPlot = {
+        const futurePlot: IPlot = {
             collapsed: false,
             datasets: [
                 {
@@ -162,44 +180,20 @@ export class DstComponent implements OnInit {
                     domainVariables: [ 'time' ]
                 },
                 {
-                    url: `${environment.mockData}`,
-                    name: 'Predicted Dst',
-                    rangeVariables: [
-                        'predicted_dst_0',
-                        'predicted_dst_1',
-                        'predicted_dst_2',
-                        'predicted_dst_3',
-                        'predicted_dst_4',
-                        'predicted_dst_5',
-                        'predicted_dst_6',
-                        'predicted_dst_7',
-                        'predicted_dst_8',
-                        'predicted_dst_9',
-                        'predicted_dst_10',
-                        'predicted_dst_11',
-                        'predicted_dst_12',
-                        'predicted_dst_13',
-                        'predicted_dst_14',
-                        'predicted_dst_15',
-                        'predicted_dst_16',
-                        'predicted_dst_17',
-                        'predicted_dst_18',
-                        'predicted_dst_19',
-                        'predicted_dst_20',
-                        'predicted_dst_21',
-                        'predicted_dst_22'
-                    ],
-                    selectedRangeVariables: [ 'predicted_dst_10' ],
+                    url: `${environment.mockDataFuture}`,
+                    name: 'Future prediction',
+                    rangeVariables: [ 'predicted_dst_0hr' ],
+                    selectedRangeVariables: [ 'predicted_dst_0hr' ],
                     domainVariables: [ 'time' ]
                 }
             ],
             initialOptions: DEFAULT_PLOT_OPTIONS as IMenuOptions,
             range: {
-                start: startDate,
-                end: endDate + ( 1000 * 60 * 60 * 10 )
+                start: this._latisService.startDate,
+                end: this._latisService.endDate
             }
         };
-        this._plotsService.addPlot(separateDatasets);
-        this._plotsService.addPlot(combinedDataset);
+        this._plotsService.addPlot(dstPlot);
+        this._plotsService.addPlot(futurePlot);
     }
 }

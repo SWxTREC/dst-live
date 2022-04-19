@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import * as moment from 'moment';
 import { BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
@@ -7,69 +8,69 @@ import { environment } from 'src/environments/environment';
     providedIn: 'root'
 })
 export class LatisService {
+    endDate: number;
     mockData$: BehaviorSubject = new BehaviorSubject();
-    mockDataCombined: number[][];
-    timesStamps: number[];
+    mockData1$: BehaviorSubject = new BehaviorSubject();
+    mockData2$: BehaviorSubject = new BehaviorSubject();
+    mockData3$: BehaviorSubject = new BehaviorSubject();
+    mockData4$: BehaviorSubject = new BehaviorSubject();
+    mockData5$: BehaviorSubject = new BehaviorSubject();
+    mockData6$: BehaviorSubject = new BehaviorSubject();
+    mockDataFuture$: BehaviorSubject = new BehaviorSubject();
+    // mockDataCombined: number[][];
+    startDate: number;
+    // timesStamps: number[];
 
     constructor(
         private _http: HttpClient
     ) {
+        // endDate is 10 hours in the future (model predicts 6 hours out)
+        this.endDate= Date.now() + (1000 * 60 * 60 * 10 );
+        // startDate is 7 days in past
+        this.startDate = moment.utc().subtract( 27 * 7, 'hours').valueOf();
+
         this.getDstData().subscribe( (response: { [parameter: string]: { data: number[][] } }) => {
             const dataKey = Object.keys(response)[0];
-            this.alterMockData( response[ dataKey ].data);
+            const dataArray = response[ dataKey ].data;
+            this.mockData1$.next( this.alterMockData( dataArray, 1 ) );
+            this.mockData2$.next( this.alterMockData( dataArray, 2 ) );
+            this.mockData3$.next( this.alterMockData( dataArray, 3 ) );
+            this.mockData4$.next( this.alterMockData( dataArray, 4 ) );
+            this.mockData5$.next( this.alterMockData( dataArray, 5 ) );
+            this.mockData6$.next( this.alterMockData( dataArray, 6 ) );
+            this.mockDataFuture$.next(this.getMockFuture( dataArray[ dataArray.length - 1 ] ));
         });
     }
 
-    alterMockData( data: number[][] ) {
-        // we want six values, t+1 to t + 6 with error values added as min and max
-        this.timesStamps = data.map( (dataValue: [number, number]) => dataValue[0] );
-        const timeSteps = [ 0, 1, 2, 3, 4, 5 ];
-        const alteredSeparateDatasets  = data.reduce( ( aggregator: number[][][], dataItem: number[], index: number ) => {
-            const alteredValues: number[][] = timeSteps.map( (timeStep: number, stepIndex: number) => {
-                const time: number = data[index][0] + ( 1000 * 60 * 60 * timeStep );
-                return [
-                    time,
-                    Number((data[index][1] + (timeStep * Math.random() )).toFixed(0)),
-                    data[index][1] - stepIndex,
-                    data[index][1] + stepIndex
-                ];
-            });
-            aggregator.push(alteredValues);
-            return aggregator;
-        }, []);
-
-        // this version has each model run as a variable at each time step (lots of empty values, wasted JSON?)
-        const modelRuns = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22 ];
-        const alteredCombinedDatasets = data.map( (dataItem: number[], index: number) => {
-            const dataArray = [ dataItem[0] ];
-            modelRuns.forEach(modelRun => {
-                const addDataPoint = index - modelRun >= 0 && index - modelRun < 6;
-                if ( addDataPoint ) {
-                    dataArray.push( Number((dataItem[1] * Math.random()).toFixed(0)) );
-                } else {
-                    dataArray.push(NaN);
-                }
-            });
-            return dataArray;
+    alterMockData( data: number[][], duration: number ) {
+        const alteredData = data.map( ( dataItem: number[] ) => {
+            return [
+                dataItem[0],
+                Number((dataItem[1] * duration +  Math.random() ).toFixed(0)),
+                dataItem[1] - duration,
+                dataItem[1] + duration
+            ];
         });
-        timeSteps.forEach( step => {
-            const time = data[ data.length - 1 ][0] + ( 1000 * 60 * 60 * step );
-            const dataArray = [ time ];
-            modelRuns.forEach(modelRun => {
-                const addDataPoint = modelRun - step > (modelRuns.length - 1) - (timeSteps.length - 1);
-                if ( addDataPoint ) {
-                    dataArray.push( step + 5 );
-                } else {
-                    dataArray.push( NaN );
-                }
-            });
-            alteredCombinedDatasets.push(dataArray);
-        });
-        this.mockDataCombined = alteredCombinedDatasets;
-        this.mockData$.next(alteredSeparateDatasets);
+        return alteredData;
     }
 
     getDstData() {
-        return this._http.get(environment.latisSwp + `kyoto_dst_index.jsond?takeRight(${ 23 })` );
+        const startDate = moment.utc( this.startDate ).format();
+        const endDate = moment.utc( this.endDate ).format();
+        return this._http.get( environment.latisSwp + `kyoto_dst_index.jsond?time>${startDate}&time<=${endDate}` );
+    }
+
+    getMockFuture( lastData: number[] ) {
+        const value = lastData[1];
+        const timesteps = [ 0, 1, 2, 3, 4, 5 ];
+        const futureData = timesteps.map( (step: number ) => {
+            return [
+                Number(lastData[0]) + ( 1000 * 60 * 60 * step ),
+                Number( ( value + (( step * Math.random() ).toFixed( 0 ) )) ),
+                Number( ( value + (( step * Math.random() ).toFixed( 0 ) )) ) - ( step * Math.random()),
+                Number( ( value + (( step * Math.random() ).toFixed( 0 ) )) ) + ( step * Math.random())
+            ];
+        });
+        return futureData;
     }
 }

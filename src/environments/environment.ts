@@ -8,10 +8,14 @@ export const environment = {
     production: false,
     // latisSwp: 'https://swp-dev.pdmz.lasp.colorado.edu/space-weather-portal/latis/dap/',
     latisSwp: 'https://lasp.colorado.edu/space-weather-portal/latis/dap/',
-    mockData: 'assets/data/mockData.json',
-    mockData_first: 'assets/data/mockData_first.json',
-    mockData_mid: 'assets/data/mockData_10.json',
-    mockData_last: 'assets/data/mockData_last.json',
+    mockData1hr: 'assets/data/mockData_1hr.json',
+    mockData2hr: 'assets/data/mockData_2hr.json',
+    mockData3hr: 'assets/data/mockData_3hr.json',
+    mockData4hr: 'assets/data/mockData_4hr.json',
+    mockData5hr: 'assets/data/mockData_5hr.json',
+    mockData6hr: 'assets/data/mockData_6hr.json',
+    mockData7hr: 'assets/data/mockData_7hr.json',
+    mockDataFuture: 'assets/data/mockData_future.json',
     version: version
 };
 
