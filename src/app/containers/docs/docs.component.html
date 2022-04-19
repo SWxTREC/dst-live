@@ -1,7 +1,11 @@
 <mat-card class="docs__text">
     <p>Documentation placeholder text</p>
-    <p>For now, we wil use this to copy the fake data over to assets:<p>
-    {{ mockLatisData | json }}
-
+    <p>For now, we will use this to copy the fake data over to assets:<p>
+        <p>Combined mocked data (data as variables)</p>
+        <p>{{ combinedMockedData | json }}</p>
+        <p>Separate moocked data (each run as a separate dataset)</p>
+        <p *ngFor="let dataset of dataKeys ">
+            "{{dataset}}": {{ mockLatisData[dataset] | json }}
+        </p>
     <!-- <markdown [src]="#"></markdown> -->
 </mat-card>

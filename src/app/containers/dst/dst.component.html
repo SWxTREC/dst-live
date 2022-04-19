@@ -1,4 +1,15 @@
 <mat-card class="plots">
-    <sci-grid></sci-grid>
-    <sci-plot-selector class="plots__selector"></sci-plot-selector>
+    <sci-grid class="plots__grid"></sci-grid>
+    <div class="plots__selector">
+        <button mat-raised-button color="primary" (click)="addDstPlot()">
+            + Add Kyoto Dst plot
+        </button>
+        <br>
+        <button mat-raised-button color="primary" disabled>
+            + Add predictions
+        </button>
+        <small [ngStyle]="{color:'gray', textAlign:'center'}">(placeholder button/dropdown)</small>
+        <br>
+        <sci-plot-selector></sci-plot-selector>
+    </div>
 </mat-card>

@@ -3,7 +3,13 @@
 
 .plots {
     display: flex;
+    &__grid {
+        width: 90%;
+    }
     &__selector {
+        width: 20%;
+        display: flex;
+        flex-direction: column;
         ::ng-deep {
             .mat-checkbox { display: none }
         }

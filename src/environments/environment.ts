@@ -9,6 +9,9 @@ export const environment = {
     // latisSwp: 'https://swp-dev.pdmz.lasp.colorado.edu/space-weather-portal/latis/dap/',
     latisSwp: 'https://lasp.colorado.edu/space-weather-portal/latis/dap/',
     mockData: 'assets/data/mockData.json',
+    mockData_first: 'assets/data/mockData_first.json',
+    mockData_mid: 'assets/data/mockData_10.json',
+    mockData_last: 'assets/data/mockData_last.json',
     version: version
 };
 
