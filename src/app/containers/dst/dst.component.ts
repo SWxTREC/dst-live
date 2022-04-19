@@ -41,6 +41,66 @@ const DEFAULT_PLOT_OPTIONS = {
     }
 };
 
+const PLOTS = {
+    '1 hr': {
+        url: `${environment.mockData1hr}`,
+        name: '1 hr prediction',
+        rangeVariables: ['predicted_dst_1hr'],
+        selectedRangeVariables: ['predicted_dst_1hr'],
+        domainVariables: ['time']
+    },
+    '2 hr': {
+        url: `${environment.mockData2hr}`,
+        name: '2 hr prediction',
+        rangeVariables: [ 'predicted_dst_2hr' ],
+        selectedRangeVariables: [ 'predicted_dst_2hr' ],
+        domainVariables: [ 'time' ]
+    },
+    '3 hr': {
+        url: `${environment.mockData3hr}`,
+        name: '3 hr prediction',
+        rangeVariables: [ 'predicted_dst_3hr' ],
+        selectedRangeVariables: [ 'predicted_dst_3hr' ],
+        domainVariables: [ 'time' ]
+    },
+    '4 hr': {
+        url: `${environment.mockData4hr}`,
+        name: '4 hr prediction',
+        rangeVariables: [ 'predicted_dst_4hr' ],
+        selectedRangeVariables: [ 'predicted_dst_4hr' ],
+        domainVariables: [ 'time' ]
+    },
+    '5 hr': {
+        url: `${environment.mockData5hr}`,
+        name: '5 hr prediction',
+        rangeVariables: ['predicted_dst_5hr'],
+        selectedRangeVariables: ['predicted_dst_5hr'],
+        domainVariables: ['time']
+    },
+    '6 hr': {
+        url: `${environment.mockData6hr}`,
+        name: '6 hr prediction',
+        rangeVariables: ['predicted_dst_6hr'],
+        selectedRangeVariables: ['predicted_dst_6hr'],
+        domainVariables: ['time']
+    },
+    'Future': {
+        url: `${environment.mockDataFuture}`,
+        name: 'Future prediction',
+        rangeVariables: [ 'predicted_dst_0hr' ],
+        selectedRangeVariables: [ 'predicted_dst_0hr' ],
+        domainVariables: [ 'time' ]
+    }
+}
+
+const DST = {
+    url: `${environment.latisSwp}kyoto_dst_index.jsond?`,
+    name: 'Kyoto Dst',
+    rangeVariables: [ 'dst' ],
+    selectedRangeVariables: [ 'dst' ],
+    domainVariables: [ 'time' ]
+}
+
 // set the UI features for Dst
 const DST_PRESET: IUiFeatures = {
     featureList: DEFAULT_UI_OPTIONS.features.featureList,
@@ -66,8 +126,7 @@ const DST_PRESET: IUiFeatures = {
     styleUrls: [ './dst.component.scss' ]
 })
 export class DstComponent implements OnInit {
-    endDate: number;
-
+    datasetNames: string[] = Object.keys(PLOTS);
     constructor(
         private _latisService: LatisService,
         private _plotsService: PlotsService,
@@ -87,81 +146,46 @@ export class DstComponent implements OnInit {
     }
 
     addDstPlot() {
-        const endDate: number = Date.now();
-        const startDate: number = endDate - (1000 * 60 * 60 * 24 * 7);
         const dstPlot: IPlot = {
             collapsed: false,
             datasets: [
-                {
-                    url: `${environment.latisSwp}kyoto_dst_index.jsond?`,
-                    name: 'Kyoto Dst',
-                    rangeVariables: [ 'dst' ],
-                    selectedRangeVariables: [ 'dst' ],
-                    domainVariables: [ 'time' ]
-                }
+                DST
             ],
             initialOptions: DEFAULT_PLOT_OPTIONS as IMenuOptions,
             range: {
-                start: startDate,
-                end: endDate + ( 1000 * 60 * 60 * 7 )
+                start: this._latisService.startDate,
+                end: this._latisService.endDate
             }
         };
         this._plotsService.addPlot(dstPlot);
+    }
+
+    addPrediction( datasetName: string ) {
+        const plotToAdd: IPlot = {
+            collapsed: false,
+            datasets: [
+                PLOTS[datasetName]
+            ],
+            initialOptions: DEFAULT_PLOT_OPTIONS as IMenuOptions,
+            range: {
+                start: this._latisService.startDate,
+                end: this._latisService.endDate
+            }
+        }
+        this._plotsService.addPlot(plotToAdd);
     }
 
     getDstValues() {
         const dstPlot: IPlot = {
             collapsed: false,
             datasets: [
-                {
-                    url: `${environment.latisSwp}kyoto_dst_index.jsond?`,
-                    name: 'Kyoto Dst',
-                    rangeVariables: [ 'dst' ],
-                    selectedRangeVariables: [ 'dst' ],
-                    domainVariables: [ 'time' ]
-                },
-                {
-                    url: `${environment.mockData1hr}`,
-                    name: '1 hr prediction',
-                    rangeVariables: [ 'predicted_dst_1hr' ],
-                    selectedRangeVariables: [ 'predicted_dst_1hr' ],
-                    domainVariables: [ 'time' ]
-                },
-                {
-                    url: `${environment.mockData2hr}`,
-                    name: '2 hr prediction',
-                    rangeVariables: [ 'predicted_dst_2hr' ],
-                    selectedRangeVariables: [ 'predicted_dst_2hr' ],
-                    domainVariables: [ 'time' ]
-                },
-                {
-                    url: `${environment.mockData3hr}`,
-                    name: '3 hr prediction',
-                    rangeVariables: [ 'predicted_dst_3hr' ],
-                    selectedRangeVariables: [ 'predicted_dst_3hr' ],
-                    domainVariables: [ 'time' ]
-                },
-                {
-                    url: `${environment.mockData4hr}`,
-                    name: '4 hr prediction',
-                    rangeVariables: [ 'predicted_dst_4hr' ],
-                    selectedRangeVariables: [ 'predicted_dst_4hr' ],
-                    domainVariables: [ 'time' ]
-                },
-                {
-                    url: `${environment.mockData5hr}`,
-                    name: '5 hr prediction',
-                    rangeVariables: [ 'predicted_dst_5hr' ],
-                    selectedRangeVariables: [ 'predicted_dst_5hr' ],
-                    domainVariables: [ 'time' ]
-                },
-                {
-                    url: `${environment.mockData6hr}`,
-                    name: '6 hr prediction',
-                    rangeVariables: [ 'predicted_dst_6hr' ],
-                    selectedRangeVariables: [ 'predicted_dst_6hr' ],
-                    domainVariables: [ 'time' ]
-                }
+                DST,
+                PLOTS['1 hr'],
+                PLOTS['2 hr'],
+                PLOTS['3 hr'],
+                PLOTS['4 hr'],
+                PLOTS['5 hr'],
+                PLOTS['6 hr']
             ],
             initialOptions: DEFAULT_PLOT_OPTIONS as IMenuOptions,
             range: {
@@ -172,20 +196,8 @@ export class DstComponent implements OnInit {
         const futurePlot: IPlot = {
             collapsed: false,
             datasets: [
-                {
-                    url: `${environment.latisSwp}kyoto_dst_index.jsond?`,
-                    name: 'Kyoto Dst',
-                    rangeVariables: [ 'dst' ],
-                    selectedRangeVariables: [ 'dst' ],
-                    domainVariables: [ 'time' ]
-                },
-                {
-                    url: `${environment.mockDataFuture}`,
-                    name: 'Future prediction',
-                    rangeVariables: [ 'predicted_dst_0hr' ],
-                    selectedRangeVariables: [ 'predicted_dst_0hr' ],
-                    domainVariables: [ 'time' ]
-                }
+                DST,
+                PLOTS['Future']
             ],
             initialOptions: DEFAULT_PLOT_OPTIONS as IMenuOptions,
             range: {

@@ -6,6 +6,11 @@
     &__grid {
         width: 90%;
     }
+    &__expansion-panel {
+        margin: 5px;
+        position: absolute;
+        z-index: 3;
+    }
     &__selector {
         width: 20%;
         display: flex;
@@ -14,6 +19,7 @@
             .mat-checkbox { display: none }
             .mat-raised-button {
                 margin: 5px 0;
+                width: 100%;
             }
         }
     }
