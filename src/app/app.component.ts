@@ -21,7 +21,7 @@ import { environment } from '../environments/environment';
 export class AppComponent {
     largeLogoSrc = 'assets/images/swqu-logo.png';
     smallLogoSrc = 'assets/images/swqu-logo-small.png';
-    orgLogoSrc = 'assets/images/SWT-white-logo.png';
+    orgLogoSrc = 'https://swx-trec.com/swx-trec-assets/general/swx-trec-logo-white.png';
 
     // please have no more than 7 items in the nav menu
     navItems: INavItem[] = [
@@ -39,7 +39,11 @@ export class AppComponent {
 
     orgLogos: IImageLink[] = [
         {
-            src: 'assets/images/nasa-logo-web-rgb.png',
+            src: 'https://swx-trec.com/swx-trec-assets/general/cireslogo.png',
+            href: 'https://cires.colorado.edu/'
+        },
+        {
+            src: 'https://swx-trec.com/swx-trec-assets/general/nasa-logo-web-rgb.png',
             href: 'https://ml-space-weather.github.io/'
         }
     ];
