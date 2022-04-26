@@ -39,7 +39,7 @@ export class AppComponent {
 
     orgLogos: IImageLink[] = [
         {
-            src: 'https://swx-trec.com/swx-trec-assets/general/cireslogo.png',
+            src: 'https://swx-trec.com/swx-trec-assets/general/cireslogo-transparent-white.png',
             href: 'https://cires.colorado.edu/'
         },
         {
