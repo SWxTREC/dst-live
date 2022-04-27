@@ -1,11 +1,47 @@
 @use '~lasp-base-app-snippets/styles/misc';
 @include misc.ignore-max-page-width;
+@import 'src/theme/theme-colors.scss';
 
 .plots {
     display: flex;
-    &__selector {
+    &__grid {
+        width: 85%;
+    }
+    &__expansion-panel {
+        margin: 5px;
+        position: absolute;
+        width: 95%;
+        z-index: 3;
         ::ng-deep {
-            .mat-checkbox { display: none }
+            .mat-expansion-panel {
+                background-color: $color-accent;
+            }
+            .mat-expansion-panel-content {
+                background: white;
+            }
+            .mat-expansion-panel-body {
+                padding-top: 5px;
+                background: #f5f5f5;
+            }
+
+        }
+    }
+    &__selector {
+        position: relative;
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+        ::ng-deep {
+            .selected-datasets {
+                background-color: transparent;
+                &__tip {
+                    visibility: hidden;
+                }
+            }
+            .mat-raised-button {
+                margin: 5px 0;
+                width: 100%;
+            }
         }
     }
 }

@@ -1,4 +1,21 @@
 <mat-card class="plots">
-    <sci-grid></sci-grid>
-    <sci-plot-selector class="plots__selector"></sci-plot-selector>
+    <sci-grid class="plots__grid"></sci-grid>
+    <div class="plots__selector">
+        <mat-accordion class="plots__expansion-panel">
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        + Add Datasets
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <button mat-raised-button color="primary" (click)="addDstPlot()">
+                    + Kyoto Dst plot
+                </button>
+                <button *ngFor="let dataset of datasetNames" mat-raised-button color="primary" (click)="addPrediction(dataset)">
+                    + {{dataset}} Prediction
+                </button>
+            </mat-expansion-panel>
+        </mat-accordion>
+        <sci-plot-selector></sci-plot-selector>
+    </div>
 </mat-card>
