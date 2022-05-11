@@ -9,7 +9,7 @@
     "build:prod": "ng build --prod",
     "deploy": "npm run build:pages && cp docs/index.html docs/404.html && gh-pages -d docs && npm run git -- 'new gh-pages deploy'",
     "git": "git add . && git commit -m",
-    "postgit": "git push github-deploy gh-pages",
+    "postgit": "git push github-deploy",
     "test": "ng test",
     "lint": "ng lint",
     "lint:fix": "ng lint --fix",
