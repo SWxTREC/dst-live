@@ -91,6 +91,18 @@ When you are ready to push your image, contact the web team infrastructure group
 
 ## Deploying CU Space Weather Forecast
 
+While in development we will be deploying to GitHub pages.
+
+from the branch with the changes you would like published, `npm run deploy`
+
+This will:
+
+* Run `npm run build:pages` to create the `/docs` directory that will be deployed
+* Make a copy of `docs/index.html` and name it `docs/404.html` (for some reason the angular instructions say to do this)
+* Take the current build of `/docs` from the current branch and push it up to the remote `gh-pages` branch were it will be served
+
+After a few minutes, you will see the changes at the GitHub-hosted site https://swxtrec.github.io/dst-live.
+
 ### Requirements
 
 Who needs to be made aware of a release? What limitations/restrictions are there before making a
