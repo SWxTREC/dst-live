@@ -286,7 +286,11 @@ https://www.highcharts.com/license
 
 lasp-base-app-snippets
 
+lasp-checkbox-tree
+
 lasp-cookie-consent
+
+lasp-enhanced-select
 
 lasp-footer
 
