@@ -1,9 +1,9 @@
 # Dst Model Description
 
 ## Overview
-DstLive is a model for real-time predictions of the Dst Geomagnetic index. The 'ground-truth' for Dst is assumed to be the one issued by the World Data Center for Geomagnetism, Kyoto (https://wdc.kugi.kyoto-u.ac.jp/dstdir/).
+LiveDst is a model for real-time predictions of the Dst Geomagnetic index. The 'ground-truth' for Dst is assumed to be the one issued by the World Data Center for Geomagnetism, Kyoto (https://wdc.kugi.kyoto-u.ac.jp/dstdir/).
 
-DstLive predicts Dst from 1 to 6 hours ahead, with associated probabilities.
+LiveDst predicts Dst from 1 to 6 hours ahead, with associated probabilities.
 The model is based on **multi-fidelity boosted neural networks** (Hu, Camporeale, Swiger, 2022), that ingest real-time data solar wind observed by ACE at the 1st Lagrangian point (https://www.swpc.noaa.gov/products/ace-real-time-solar-wind). In addition, the time history of Dst is used.
 
 ## Operational set up
@@ -17,7 +17,7 @@ See the reference paper (Hu, Camporeale, Swiger, 2022) for details.
 
 
 ## Output Data
-The model outputs predictions in terms of Gaussian distributions, where the **DstLive prediction**, shown as a continuous line is the mean of the Gaussian distribution, and the shaded area is one standard deviation. In other words, the model predicts a 68% probability for Dst to lie within the shaded region.
+The model outputs predictions in terms of Gaussian distributions, where the **LiveDst prediction**, shown as a continuous line is the mean of the Gaussian distribution, and the shaded area is one standard deviation. In other words, the model predicts a 68% probability for Dst to lie within the shaded region.
 In the default settings, the top panel shows the observed Dst for the past 24 hours, and the predicted Dst for the future 6 hours (prediction are always made for the top of the hour), each shown with its confidence interval (one standard deviation).
 However, the user has the possibility to overlay predictions made with **different time lags** (t+1, t+2,... t+6 being 1, 2,...,6 hours ahead).
 The timeseries labeled **Observed Dst at time of model run** shows the Dst used as inputs and available at the time when the predictions were issued. Sometimes those values are adjusted at later times.
